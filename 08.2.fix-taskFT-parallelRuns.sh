@@ -42,6 +42,7 @@
 
 # Get the number of parallel jobs from the command line, or define internally:
 #parallelFixRuns=$1
+# ...consider encoding this parameter in the $executionSuffix (below)
 parallelFixRuns=10
 
 
@@ -78,4 +79,4 @@ echo ""
 ls -d ${niftiDirProject}/omt*/*taskFT*melodicFixNone.ica | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
 #
 # ...or fmri rest runs:
-#ls -d ${niftiDirProject}/omt*/*rest*melodicFixNone.ica   | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.noceraFix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
+#ls -d ${niftiDirProject}/omt*/*rest*melodicFixNone.ica   | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}

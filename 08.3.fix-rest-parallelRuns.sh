@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 08.2.fix-taskFT-parallelRuns.sh
+# 08.3.fix-rest-parallelRuns.sh
 #
 # Applies parallel application of FIX to MELODIC .ica directories via gnu parallel calls to 08.1.fix-singleRun.sh
 # Can be used for fmri rest or fmri taskFT (see below).

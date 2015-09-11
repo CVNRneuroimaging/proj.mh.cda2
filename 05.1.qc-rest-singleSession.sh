@@ -2,7 +2,7 @@
 
 # 05.1.qc-rest-singleSession.sh
 #
-# Generate QC report for one Hackney fmri rest session (1 run per session).
+# Generate QC report for one fmri rest session (1 run per session).
 
 # INPUT:
 # Session-level nifti directory containing FSL MNI reoriented .nii files from
@@ -27,7 +27,7 @@ qcOutputDir=${niftiDirSession}/qcReport-FBIRN-rest
 # inform stdout: 
 echo ""
 echo "#####################################################"
-echo "Executing fmriqa_generate.pl for Hackney fmri rest:"
+echo "Executing fmriqa_generate.pl for fmri rest:"
 echo ""
 echo "niftiDirSession :"
 du -sh ${niftiDirSession}
