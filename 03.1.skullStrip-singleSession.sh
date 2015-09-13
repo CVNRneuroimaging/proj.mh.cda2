@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# 03.1.skullStrip-singleSession.sh
+
 # skull-strip a single session
 
 # This file is just here as a placeholder to point to the script to use for actual brain extraction:

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# 05.2.qc-rest-parallelSessions.sh
+
 parallelQcRuns=$1
 niftiDirProject=/data/panolocal/processedOnPano-hackney/derivedData
 
