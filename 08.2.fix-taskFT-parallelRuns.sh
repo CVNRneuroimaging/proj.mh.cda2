@@ -43,7 +43,7 @@
 # Get the number of parallel jobs from the command line, or define internally:
 #parallelFixRuns=$1
 # ...consider encoding this parameter in the $executionSuffix (below)
-parallelFixRuns=15
+parallelFixRuns=10
 
 
 # The project root containing melodic .ica directories:
@@ -60,7 +60,7 @@ fixThresh=15
 # Suffix for output .ica directory indicating how processing was performed
 # e.g., "gnuParallel10rama" for 10 simultaneous gnu parallel jobs executed on rama
 # (arbitrary string...just a way to help troubleshoot output when parallel processing goes awry)
-executionSuffix=gnuParallel15
+executionSuffix=gnuParallel10
 
 echo ""
 echo "###################################################################"
