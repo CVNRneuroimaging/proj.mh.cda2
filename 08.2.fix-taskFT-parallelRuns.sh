@@ -43,7 +43,7 @@
 # Get the number of parallel jobs from the command line, or define internally:
 #parallelFixRuns=$1
 # ...consider encoding this parameter in the $executionSuffix (below)
-parallelFixRuns=10
+parallelFixRuns=12
 
 
 # The project root containing melodic .ica directories:
@@ -54,13 +54,13 @@ niftiDirProject=/data/panolocal/processedOnPano-hackney/derivedData
 # NB: not receiving $fixThresh from command line argument because of potential
 # confusion with commandline argument for $parallelFixRuns:
 fixWeightsFile=/opt/fix/training_files/Standard.RData
-fixThresh=15
+fixThresh=10
 
 
 # Suffix for output .ica directory indicating how processing was performed
 # e.g., "gnuParallel10rama" for 10 simultaneous gnu parallel jobs executed on rama
 # (arbitrary string...just a way to help troubleshoot output when parallel processing goes awry)
-executionSuffix=gnuParallel10
+executionSuffix=gnuParallel12
 
 echo ""
 echo "###################################################################"
