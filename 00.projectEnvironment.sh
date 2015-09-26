@@ -54,7 +54,7 @@ cat /tmp/missingOutputList.txt
 
 
 export projDir="/data/panolocal/processedOnPano-hackney"
-export scriptDir="~stowler-local/src.mywork.gitRepos/proj.mh.cda2"
+export scriptDir="/home/stowler-local/src.mywork.gitRepos/proj.mh.cda2"
 
 
 ###########################################################
@@ -115,6 +115,6 @@ export sessionsTypicalHOArlegPre_column="`echo ${sessionsTypicalHOArlegPre} | se
 export sessionsTypicalTGTrlegPre_column="`echo ${sessionsTypicalTGTrlegPre} | sed 's/ /\n/g'`"
 #echo "$sessionsTypicalTGTrlegPre_column"
 export sessionsTypicalTGTllegPre_column="`echo ${sessionsTypicalTGTllegPre} | sed 's/ /\n/g'`"
-echo "$sessionsTypicalTGTllegPre_column"
+#echo "$sessionsTypicalTGTllegPre_column"
 
-fxnCheckSessions "${sessionsTypicalTGTllegPre}"
+#fxnCheckSessions "${sessionsTypicalTGTllegPre}"
