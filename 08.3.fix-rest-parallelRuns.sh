@@ -53,8 +53,8 @@ niftiDirProject=/data/panolocal/processedOnPano-hackney/derivedData
 # Specify FIX parameters. 
 # NB: not receiving $fixThresh from command line argument because of potential
 # confusion with commandline argument for $parallelFixRuns:
-fixWeightsFile=/opt/fix/training_files/Standard.RData
-fixThresh=10
+fixWeightsFile=/opt/fix/training_files/WhII_Standard.RData
+fixThresh=20
 
 
 # Suffix for output .ica directory indicating how processing was performed
