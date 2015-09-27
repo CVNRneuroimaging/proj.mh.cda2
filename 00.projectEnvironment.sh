@@ -117,4 +117,4 @@ export sessionsTypicalTGTrlegPre_column="`echo ${sessionsTypicalTGTrlegPre} | se
 export sessionsTypicalTGTllegPre_column="`echo ${sessionsTypicalTGTllegPre} | sed 's/ /\n/g'`"
 #echo "$sessionsTypicalTGTllegPre_column"
 
-#fxnCheckSessions "${sessionsTypicalTGTllegPre}"
+#fxnCheckSessions "${sessionsTypicalHOArlegPre}"
