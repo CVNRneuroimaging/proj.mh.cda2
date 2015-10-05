@@ -16,4 +16,14 @@ fxnGenTGTrlegPre(){
    ls -al ~/temp.TGTrlegPre/*
 }
 
-fxnGenTGTrlegPre
+fxnGenTGTllegPre(){
+   # Generate proc* scripts for $sessionsTypicalTGTllegPre :
+   for session in `echo ${sessionsTypicalTGTllegPre}`; do
+      echo $session
+      ./09.0.afniProcGen-taskFT-singleSession.sh $session TGTllegPre
+   done
+   ls -al ~/temp.TGTllegPre/*
+}
+
+#fxnGenTGTrlegPre
+fxnGenTGTllegPre
