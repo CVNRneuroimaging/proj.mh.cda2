@@ -23,7 +23,12 @@
 
 # sessionIDlist for rama re-processing 20150903-13:
 # ...notice the exclusion of template session omt001s01. This is to prevent a recursive loop. 
-sessionIDlist="omt002s01 omt003s01 omt004s01 omt006s01 omt007s01 omt008s01 omt009s01 omt010s01 omt011s01 omt012s01 omt013s01 omt015s01 omt021s01 omt022s01 omt023s01 omt024s01 omt025s01 omt027s01 omt028s01 omt029s01 omt030s01 omt031s01 omt102s01 omt102s02 omt103s01 omt105s01 omt106s01 omt106s02 omt108s01 omt108s02 omt110s01 omt110s02 omt111s01 omt113s01 omt114s01 omt115s01 omt116s01 omt117s01 omt119s01 omt120s01 omt121s01 omt202s01 omt203s01 omt203s02 omt204s01 omt204s02 omt205s01 omt205s02 omt206s01 omt206s02 omt207s01 omt207s02 omt211s01 omt211s02 omt214s01 omt215s01 omt219s01 omt220s01 omt221s01 omt301s01 omt301s02 omt302s01 omt302s02 omt304s01 omt304s02 omt305s01 omt305s02 omt308s01 omt308s02 omt310s01 omt310s02 omt311s01 omt311s02 omt312s01 omt312s02 omt314s01 omt314s02 omt315s01 omt315s02 omt317s01 omt317s02 omt318s01 omt320s01 omt994s01 omt995s01 omt997s01"
+
+#sessionIDlist="omt002s01 omt003s01 omt004s01 omt006s01 omt007s01 omt008s01 omt009s01 omt010s01 omt011s01 omt012s01 omt013s01 omt015s01 omt021s01 omt022s01 omt023s01 omt024s01 omt025s01 omt027s01 omt028s01 omt029s01 omt030s01 omt031s01 omt102s01 omt102s02 omt103s01 omt105s01 omt106s01 omt106s02 omt108s01 omt108s02 omt110s01 omt110s02 omt111s01 omt113s01 omt114s01 omt115s01 omt116s01 omt117s01 omt119s01 omt120s01 omt121s01 omt202s01 omt203s01 omt203s02 omt204s01 omt204s02 omt205s01 omt205s02 omt206s01 omt206s02 omt207s01 omt207s02 omt211s01 omt211s02 omt214s01 omt215s01 omt219s01 omt220s01 omt221s01 omt301s01 omt301s02 omt302s01 omt302s02 omt304s01 omt304s02 omt305s01 omt305s02 omt308s01 omt308s02 omt310s01 omt310s02 omt311s01 omt311s02 omt312s01 omt312s02 omt314s01 omt314s02 omt315s01 omt315s02 omt317s01 omt317s02 omt318s01 omt320s01 omt994s01 omt995s01 omt997s01"
+
+#sessionIDlist for october reprocessing of atypical sessions:
+sessionIDlist="omt022s01 omt122s01 omt201s01 omt205s01 omt219s01 omt221s01 omt222s01 omt223s01 omt225s01 omt226s01 omt304s01 omt304s02"
+
 
 # directory containing single-session fsf files that will act as template for
 # other sessions:
