@@ -1,17 +1,29 @@
 #!/bin/bash
 
 # source environment script to get participant lists such as ${sessionsTypicalHOArlegPre}:
-. 00.projectEnvironment.sh
+. ./00.projectEnvironment.sh
 echo $scriptDir
 echo $projDir
 
-parentDir=/home/stowler-local/temp
 
-fxnExecuteProc(){
+fxnExecuteProcHOArlegPre(){
    # Execute the proc script for each sessionsTypicalHOArlegPre session, serially:
+   parentDir=/home/stowler-local/temp
    for session in ${sessionsTypicalHOArlegPre}; do
       #echo "session is $session"
       cd ${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
+      tcsh -xef proc.${session}.onsetsBlock.basisTent12.includesContrast |& tee output.proc.${session}.onsetsBlock.basisTent12.includesContrast
+   done
+}
+
+fxnExecuteProcTGTrlegPre(){
+   # Execute the proc script for each TGTrlegPre session, serially:
+   parentDir=/home/stowler-local/temp.TGTrlegPre
+   for session in ${sessionsTypicalTGTrlegPre}; do
+      echo ""
+      echo "session is $session"
+      du -sh ${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
+      cd     ${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
       tcsh -xef proc.${session}.onsetsBlock.basisTent12.includesContrast |& tee output.proc.${session}.onsetsBlock.basisTent12.includesContrast
    done
 }
@@ -58,4 +70,4 @@ fxnCreateAUC(){
    done
 }
 
-fxnCreateAUC
+fxnExecuteProcTGTrlegPre
