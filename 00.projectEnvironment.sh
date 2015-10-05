@@ -70,13 +70,16 @@ export scriptDir="/home/stowler-local/src.mywork.gitRepos/proj.mh.cda2"
 #
 # omt221s01 - missing anat because dicom store has two copies of anat (TBD: recreate from single, move to typical lists)
 #
-# omt201s01 - not in acqfiles-nifti - has strange s1,s2,s3 situation - see sept 14 email and TBD: fix
 # omt122s01 - not in acqfiles-nifti - telomere acquired sept XX 
 # omt222s01 - not in acqfiles-nifti - telomere acq aug XX
 # omt223s01 - not in acqfiles-nifti - telomere acq. sept XX and sept XX 
 # omt225s01 - not in acqfiles-nifti - telomere acq. sept XX
 # omt226s01 - not in acqfiles-nifti - telomere acq. sept XX
 # 
+# omt201s01 - not in acqfiles-nifti - has strange s1,s2,s3 situation - see sept 14 email and TBD: fix
+#     OMT201:
+#     - PRE: keeping resting state and MPRAGE from first session, but ignoring fmri task. Taking fmri task from second session.
+#     - POST (4 months later): per normal
 
 ###########################################################
 # Lists of "typical" sessions, each of which includes:
