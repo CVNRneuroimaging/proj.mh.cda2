@@ -36,7 +36,8 @@ fxnCheckSessions(){
    for session in `echo "${sessionList}"`; do
       echo ""
       echo "File and diredtory sizes in session $session:"
-      for suffix in ${suffixList}; do
+      #for suffix in ${suffixList}; do
+      for suffix in ${suffixListAnat}; do
          if [ -s ${projDir}/derivedData/${session}/*${suffix} ]; then
             du -sh ${projDir}/derivedData/${session}/*${suffix}
          else
@@ -99,6 +100,9 @@ sessionsTypicalHOAllegPre="omt027s01"
 sessionsTypicalHOArlegPre="omt001s01 omt003s01 omt004s01 omt006s01 omt007s01 omt008s01 omt009s01 omt010s01 omt011s01 omt012s01 omt013s01 omt015s01 omt021s01 omt023s01 omt024s01 omt025s01 omt028s01 omt029s01 omt030s01 omt031s01"
 sessionsTypicalTGTrlegPre="omt102s01 omt103s01 omt105s01 omt108s01 omt110s01 omt111s01 omt115s01 omt120s01 omt121s01 omt122s01 omt202s01 omt203s01 omt206s01 omt207s01 omt220s01 omt221s01 omt226s01 omt312s01 omt314s01 omt317s01 omt318s01 omt320s01"
 sessionsTypicalTGTllegPre="omt106s01 omt113s01 omt114s01 omt116s01 omt119s01 omt201s01 omt204s01 omt205s01 omt211s01 omt214s01 omt215s01 omt219s01 omt222s01 omt223s01 omt225s01 omt301s01 omt302s01 omt304s01 omt305s01 omt308s01 omt310s01 omt311s01 omt315s01"
+
+#12 atyipcal sessions imported october 04:
+sessionsOctImport="omt022s01 omt122s01 omt201s01 omt205s01 omt219s01 omt221s01 omt222s01 omt223s01 omt225s01 omt226s01 omt304s01 omt304s02"
 
 #######################################################################
 # Lists of sessions for 2015oct analysis. Each session must include:
