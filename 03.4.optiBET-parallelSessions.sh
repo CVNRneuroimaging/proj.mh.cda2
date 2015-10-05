@@ -9,7 +9,7 @@
 # so that it is easy for gnuParallel to iterate over sessionNames like "omt001s01"
 
 
-parallelSkullstrips=15
+parallelSkullstrips=12
 niftiDirProject=/data/panolocal/processedOnPano-hackney/derivedData
 #niftiDirProject=$1
 
@@ -22,5 +22,14 @@ echo "niftiDirProject:     $niftiDirProject"
 echo "###################################################################"
 echo ""
 
-ls -d ${niftiDirProject}/* | parallel --jobs ${parallelSkullstrips} --tag --line-buffer ./03.3.optiBET-singleSession.sh {}
+# execute for everyone:
+#ls -d ${niftiDirProject}/* | parallel --jobs ${parallelSkullstrips} --tag --line-buffer ./03.3.optiBET-singleSession.sh {}
+
+# execute just for sessions imported 20151004:
+. 00.projectEnvironment.sh #...to get $sessionsOctImport
+rm /tmp/sessionsOct.txt
+for session in ${sessionsOctImport}; do
+   echo "${niftiDirProject}/${session}" >> /tmp/sessionsOct.txt
+done
+cat /tmp/sessionsOct.txt | parallel --jobs ${parallelSkullstrips} --tag --line-buffer ./03.3.optiBET-singleSession.sh {}
 
