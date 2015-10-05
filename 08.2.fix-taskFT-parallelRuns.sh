@@ -53,9 +53,9 @@ niftiDirProject=/data/panolocal/processedOnPano-hackney/derivedData
 # Specify FIX parameters. 
 # NB: not receiving $fixThresh from command line argument because of potential
 # confusion with commandline argument for $parallelFixRuns:
-#fixWeightsFile=/opt/fix/training_files/Standard.RData
-fixWeightsFile=/opt/fix/training_files/WhII_Standard.RData
-fixThresh=10
+fixWeightsFile=/opt/fix/training_files/Standard.RData
+#fixWeightsFile=/opt/fix/training_files/WhII_Standard.RData
+fixThresh=15
 
 
 # Suffix for output .ica directory indicating how processing was performed
@@ -76,8 +76,18 @@ echo ""
 
 # Use gnu parallel to execute for either (but not both simultaneously):
 #
-# ...fmri taskFT runs:
-ls -d ${niftiDirProject}/omt*/*taskFT*melodicFixNone.ica | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
+# ...all fmri taskFT runs:
+#ls -d ${niftiDirProject}/omt*/*taskFT*melodicFixNone.ica | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
 #
-# ...or fmri rest runs:
+# ...or all fmri rest runs:
 #ls -d ${niftiDirProject}/omt*/*rest*melodicFixNone.ica   | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
+
+
+# ...only atypical 2015october imports fmri taskFT runs:
+. /home/stowler-local/src.mywork.gitRepos/proj.mh.cda2/00.projectEnvironment.sh #...to get $sessionsOctImport
+rm /tmp/sessionsOct.txt
+for session in ${sessionsOctImport}; do
+   ls -d ${niftiDirProject}/${session}/${session}.fmri.taskFT.run?.melodicFixNone.ica >> /tmp/sessionsOct.txt
+done
+cat /tmp/sessionsOct.txt | parallel --jobs ${parallelFixRuns} --tag --line-buffer ~stowler-local/src.mywork.gitRepos/proj.mh.cda2/08.1.fix-singleRun.sh {} ${fixWeightsFile} ${fixThresh} ${executionSuffix}
+
