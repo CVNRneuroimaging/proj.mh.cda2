@@ -94,12 +94,14 @@ fxnCreateAUC(){
 # Call each of these functions without arguments to launch serial execution of
 # all of one group's afni_proc proc scripts (call one function, give it about
 # four hours to run to completion, then call another):
-
+#
 #fxnExecuteProcTGTrlegPre
 #fxnExecuteProcTGTllegPre
+
 
 # After completion of a group's afni_proc proc scripts, generate AUC file for
 # each session in the group:
 #
 # (NB: see top of function for the lazy way I specify which group)
+#
 fxnCreateAUC
