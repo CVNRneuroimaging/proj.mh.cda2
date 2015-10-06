@@ -28,9 +28,30 @@ fxnExecuteProcTGTrlegPre(){
    done
 }
 
+fxnExecuteProcTGTllegPre(){
+   # Execute the proc script for each TGTllegPre session, serially:
+   parentDir=/home/stowler-local/temp.TGTllegPre
+   for session in ${sessionsTypicalTGTllegPre}; do
+      echo ""
+      echo "session is $session"
+      du -sh ${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
+      cd     ${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
+      tcsh -xef proc.${session}.onsetsBlock.basisTent12.includesContrast |& tee output.proc.${session}.onsetsBlock.basisTent12.includesContrast
+   done
+}
+
 fxnCreateAUC(){
-   for session in ${sessionsTypicalHOArlegPre}; do
-      apDir=${parentDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
+   # Calculate single-session AUC for sessions in the group.
+   #
+   # Super-lazy: edit $group and for loop's control variable to generate for group of interest. Pairs:
+   #     HOArlegPre  $sessionsTypicalHOArlegPre
+   #     TGTrlegPre  $sessionsTypicalTGTrlegPre
+   #     TGTllegPre  $sessionsTypicalTGTllegPre
+
+   group=TGTrlegPre
+   groupDir=/home/stowler-local/temp.${group}
+   for session in ${sessionsTypicalTGTrlegPre}; do
+      apDir=${groupDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
       resultsDir=${apDir}/results.${session}.onsetsBlock.basisTent12.includesContrast
       irespEG=${resultsDir}/iresp_EG.${session}.onsetsBlock.basisTent12.includesContrast+tlrc.HEAD
       irespIG=${resultsDir}/iresp_IG.${session}.onsetsBlock.basisTent12.includesContrast+tlrc.HEAD
@@ -70,4 +91,15 @@ fxnCreateAUC(){
    done
 }
 
-fxnExecuteProcTGTrlegPre
+# Call each of these functions without arguments to launch serial execution of
+# all of one group's afni_proc proc scripts (call one function, give it about
+# four hours to run to completion, then call another):
+
+#fxnExecuteProcTGTrlegPre
+#fxnExecuteProcTGTllegPre
+
+# After completion of a group's afni_proc proc scripts, generate AUC file for
+# each session in the group:
+#
+# (NB: see top of function for the lazy way I specify which group)
+fxnCreateAUC
