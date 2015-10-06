@@ -11,4 +11,14 @@ fxnMeanIrespTGTrlegPre(){
    done
 }
 
-fxnMeanIrespTGTrlegPre
+fxnMeanIrespTGTllegPre(){
+   groupDir=/home/stowler-local/temp.TGTllegPre
+   for stimClass in EG IG; do
+      3dMean \
+      -prefix ${groupDir}/irespMean.${stimClass}.TGTllegPre \
+      ${groupDir}/apDir_omt*/results*/iresp_${stimClass}*HEAD
+   done
+}
+
+#fxnMeanIrespTGTrlegPre
+fxnMeanIrespTGTllegPre

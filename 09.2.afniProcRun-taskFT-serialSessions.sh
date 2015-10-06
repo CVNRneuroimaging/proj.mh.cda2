@@ -48,9 +48,9 @@ fxnCreateAUC(){
    #     TGTrlegPre  $sessionsTypicalTGTrlegPre
    #     TGTllegPre  $sessionsTypicalTGTllegPre
 
-   group=TGTrlegPre
+   group=TGTllegPre
    groupDir=/home/stowler-local/temp.${group}
-   for session in ${sessionsTypicalTGTrlegPre}; do
+   for session in ${sessionsTypicalTGTllegPre}; do
       apDir=${groupDir}/apDir_${session}.onsetsBlock.basisTent12.includesContrast
       resultsDir=${apDir}/results.${session}.onsetsBlock.basisTent12.includesContrast
       irespEG=${resultsDir}/iresp_EG.${session}.onsetsBlock.basisTent12.includesContrast+tlrc.HEAD
